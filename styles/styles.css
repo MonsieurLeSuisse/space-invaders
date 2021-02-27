@@ -1,0 +1,232 @@
+body{
+    background-image: url('/images/bg5.jpg');
+}
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.start {
+  position: absolute;
+  top: 420px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 5;
+  width: 900px;
+  height: 120px;
+  line-height: 120px;
+  background-color: rgba(0, 0, 15, 0.5);
+  font-family: Arial, sans-serif;
+  font-size: 62px;
+  color: white;
+  border: 1px solid black;
+  max-width: 100vw; /* iOS braucht das */
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.start span {
+  display: inline-block;
+  /*padding-left: 105%;  die zusätzlichen 5% erzeugen einen verzögerten Start und vermeiden so ein Ruckeln auf langsamen Seiten */
+  animation: marquee 4s linear infinite;
+}
+
+.start span:hover {
+  animation-play-state: paused;
+}
+
+.start div {
+  color: green;
+  /* font-size: 54px; */
+  animation-play-state: paused;
+}
+
+/* Make it move */
+@keyframes marquee {
+/*   0% {
+    transform: translateY(0%);
+    color: red;
+  }
+  25% {
+    transform: translateY(-35%);
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 10px black;
+  }
+  50% {
+    transform: translateY(0%);
+    color: red;
+  }
+  75% {
+    transform: translateY(35%);
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 10px black;
+  }
+  100% {
+    transform: translateY(0%);
+    color: red;
+    text-shadow: 3px 3px 10px black;
+  } */
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(359deg);
+  }
+}
+
+.results {
+  position: absolute;
+  top: 0px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 900px;
+  height: 60px;
+  line-height: 60px;
+  background-color: rgba(0, 0, 15, 1);
+  font-family: Arial, sans-serif;
+  font-size: 36px;
+  color: white;
+  border: 1px solid black;
+  border-bottom: 1px solid greenyellow;
+  border-left: 60px solid black;
+  border-right: 60px solid black;
+}
+.grid {
+  background-repeat: no-repeat;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 55%,
+    rgba(0, 212, 255, 0.7) 100%
+  );
+  width: 900px;
+  height: 900px;
+  border: 1px solid black;
+  border-left: 60px solid black;
+  border-right: 60px solid black;
+  position: absolute;
+  top: +62px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sky {
+  width: 900px;
+  height: 900px;
+  background-image: url("/images/sky.png");
+  position: absolute;
+  top: +62px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.grid div {
+  width: 60px;
+  height: 60px;
+}
+
+.invader {
+  background-image: url("/images/invader1.png");
+  background-repeat: no-repeat;
+  background-size: 66px 66px;
+}
+
+.shooter {
+  /* background-color: green;
+  border-radius: 10px 10px 0 0; */
+  background-image: url("/images/cannon.png");
+  background-repeat: no-repeat;
+  background-size: 66px 66px;
+}
+
+.laser {
+  background: rgb(244, 251, 63);
+  background: radial-gradient(
+    circle,
+    rgba(244, 251, 63, 1) 0%,
+    rgba(255, 255, 255, 0) 18%
+  );
+}
+
+.boom {
+  background-image: url("/images/hit5.gif");
+  background-repeat: no-repeat;
+  background-size: 66px 66px;
+}
+
+.ground {
+  background-image: linear-gradient(180deg, #320, #7d7);
+  background-size: 66px 57px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+
+  z-index: 14;
+}
+.infoImg {
+  padding-top: 8px;
+  width: 32px;
+  height: 32px;
+  margin: auto;
+  display: block;
+}
+
+.infoText {
+  min-width: 380px;
+  min-height: 440px;
+  padding:15px;
+  display: inline-block;
+  position: absolute;
+  top: 43%; 
+  left: 50%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-image: linear-gradient(180deg, #aea, #eee);
+  z-index: 15;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: black;
+}
+
+h3{
+    margin:0 0 8px;
+    color:#333;
+    font-size: 17px;
+    text-shadow: #999 1px 1px 2px;
+}
+
+.infoText span{
+    display:inline-block;
+    padding-bottom: 15px;
+    color:#444;
+}
+
+ul{
+    margin:0;
+    list-style-type: circle;
+}
+li{
+    padding: 2px;
+    font-size: 15px;
+    color: #444;
+}
+a{
+    text-decoration: none;
+    color: #444;
+}
