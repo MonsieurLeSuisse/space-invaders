@@ -160,7 +160,7 @@ function moveInvaders() {
     }
 
     for (let i = 0; i < alienInvaders.length; i++){
-        if (alienInvaders[i] > 208) {
+        if (alienInvaders[i] > 209) {
             resultsDisplay.innerHTML = "GAME OVER!";
             clearInterval(invadersId);
             newGame = true;
