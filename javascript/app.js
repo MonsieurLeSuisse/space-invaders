@@ -48,7 +48,7 @@ const infoBox = squares[224];
 //infoBox.parentNode.replaceChild(info, infoBox);
 infoBox.classList.add('info');
 const infoImg = document.createElement("img");
-infoImg.src = "/images/info.png";
+infoImg.src = "./images/info.png";
 infoImg.classList.add('infoImg');
 infoBox.appendChild(infoImg);
 //.src = 'info.png';

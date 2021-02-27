@@ -1,5 +1,5 @@
 body{
-    background-image: url('/images/bg5.jpg');
+    background-image: url('../images/bg5.jpg');
 }
 .canvas {
   display: flex;
@@ -122,7 +122,7 @@ body{
 .sky {
   width: 900px;
   height: 900px;
-  background-image: url("/images/sky.png");
+  background-image: url("../images/sky.png");
   position: absolute;
   top: +62px;
   margin: auto;
@@ -137,7 +137,7 @@ body{
 }
 
 .invader {
-  background-image: url("/images/invader1.png");
+  background-image: url("../images/invader1.png");
   background-repeat: no-repeat;
   background-size: 66px 66px;
 }
@@ -145,7 +145,7 @@ body{
 .shooter {
   /* background-color: green;
   border-radius: 10px 10px 0 0; */
-  background-image: url("/images/cannon.png");
+  background-image: url("../images/cannon.png");
   background-repeat: no-repeat;
   background-size: 66px 66px;
 }
@@ -160,7 +160,7 @@ body{
 }
 
 .boom {
-  background-image: url("/images/hit5.gif");
+  background-image: url("../images/hit5.gif");
   background-repeat: no-repeat;
   background-size: 66px 66px;
 }
@@ -196,7 +196,7 @@ body{
   left: 50%;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-image: linear-gradient(180deg, #aea, #eee);
+  background-image: linear-gradient(180deg, #aea, #efe);
   z-index: 15;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: Arial, sans-serif;
