@@ -1,6 +1,7 @@
 const grid = document.querySelector('.grid');
 const resultsDisplay = document.querySelector('.results');
 const startMessage = document.querySelector(".start");
+const player = document.getElementById("spaceplayer");
 
 let currentShooterIndex = 202;
 let width = 15;
@@ -51,7 +52,7 @@ const infoImg = document.createElement("img");
 infoImg.src = "./images/info.png";
 infoImg.classList.add('infoImg');
 infoBox.appendChild(infoImg);
-//.src = 'info.png';
+
 
 
 
@@ -59,15 +60,20 @@ infoBox.appendChild(infoImg);
 function showInfo() {
     infoText = infoBox.appendChild(document.createElement("div"));
     infoText.classList.add('infoText');
-    infoText.innerHTML = `<h3>Goal</h3><span>Shot all the evil invaders down. If you make it you are a hero, you saved the world! If you fail, may God have mercy on you.</span>
-        <h3>Start Game</h3><span>a) Press the RETURN button, or<br/>b) Click on that silly moving text.<br/></span>
+    infoText.innerHTML = `<h3>Goal</h3><span>Shoot all the evil invaders down. If you make it you are a hero, you saved the world! If you fail, may God have mercy on you.</span>
+        <h3>Start Game</h3><span>Press the RETURN button, or click on that silly moving text.<br/></span>
         <h3>Control the Defense Ship</h3>
-        <span><b>Firing</b>: Press the SPACE key to fire or alterantively use the ARROW - UP key.<br/></span>
-        <span><b>Controls</b>: Use the ARROW_LEFT and ARROW-RIGHT keys to navigate the Defense Unit in the right direction.<br/></span>
+        <span><b>Firing</b>: Press the SPACE key to fire or alterantively use the ARROW-UP key.<br/></span>
+        <span><b>Controls</b>: Use the ARROW-LEFT and ARROW-RIGHT keys to navigate the Defense Unit in the right direction.<br/></span>
         <span><b>Pause</b>: Press the CTRL or ALT or SHIFT key, press it again to resume.<br/></span>
 
-        <h3>Credits</h3><ul><li><a href="https://www.youtube.com/channel/UC5DNytAJ6_FISueUfzZCVsw" target="_blank">Ania Kubów</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Tomohiro_Nishikado" target="_blank">Tomohiro Nishikado</a></li>`;
+        <h3>Credits</h3>
+        <ul>
+        <li>Game inventor: <a href="https://en.wikipedia.org/wiki/Tomohiro_Nishikado" target="_blank">Tomohiro Nishikado</a></li>
+        <li>Originator: <a href="https://www.youtube.com/channel/UC5DNytAJ6_FISueUfzZCVsw" target="_blank">Ania Kubów</a></li>
+        <li>Music: <a href="https://moritz.world/" target="_blank">FunkyMo</a></li>
+        <li>Realization: <a href="https://nxt.one/" target="_blank">MonsieurLeSuisse</a></li>
+        </ul>`;
  infoVisible = true;
 }
 
@@ -101,6 +107,7 @@ function startGame(e) {
         draw();
         newGame = false; 
         invadersId = setInterval(moveInvaders, 300);
+        player.play();
     }    
 }
 
@@ -157,6 +164,7 @@ function moveInvaders() {
         clearInterval(invadersId);
         newGame = true;
         playAgain = true;
+        //player.pause();
     }
 
     for (let i = 0; i < alienInvaders.length; i++){
@@ -165,6 +173,7 @@ function moveInvaders() {
             clearInterval(invadersId);
             newGame = true;
             playAgain = true;
+            //player.pause();
         }
     }
     if (aliensRemoved.length === alienInvaders.length) {
@@ -172,6 +181,7 @@ function moveInvaders() {
         clearInterval(invadersId);
         newGame = true;
         playAgain = true;
+        //player.pause();
     }
 }
 
@@ -229,10 +239,12 @@ function pause(e) {
             paused = true;
             resultChache = resultsDisplay.innerHTML;
             resultsDisplay.innerHTML = "GAME PAUSED";
+            player.pause();
         } else {
             invadersId = setInterval(moveInvaders, 300);
             paused = false;
             resultsDisplay.innerHTML = resultChache;
+            player.play();
         }   
     } 
 }
@@ -256,3 +268,5 @@ function msgStart(e) {
 
 startMessage.addEventListener("mouseover", msgClick);
 startMessage.addEventListener("mouseout", msgStart);
+
+
